@@ -1,38 +1,338 @@
-.App {
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i");
+
+:root {
+  --font-roboto: "Roboto Slab", serif;
+  --font-raleway: "Raleway", sans-serif;
+  --bg-color: #212426;
+  --text-color: #f9d3b4;
+  --hover-effect: rgba(249, 211, 180, 0.6);
+  --card-bg-color: #1f2123;
+  --card-hover-color: #343739;
+}
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-roboto);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin: 20px 0;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+input {
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  width: 300px;
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+}
+
+input:focus {
+  background-color: var(--card-hover-color);
+  outline: none;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-card {
+  background-color: var(--card-bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.movie-card-info {
+  padding: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.movie-card-info h3 {
+  font-size: 1.2rem;
+  color: var(--text-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.movie-card-info p {
+  color: var(--text-color);
+  font-size: 0.9rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.movie-details {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+}
+
+.details-content {
+  display: flex;
+  gap: 20px;
+}
+
+.details-content img {
+  width: 300px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.movie-info {
+  max-width: 500px;
+  text-align: left;
+}
+
+.movie-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.movie-info p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.trailer-link {
+  color: #ff6347;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.trailer-link:hover {
+  color: #ff4500;
+}
+
+.pagination {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 20px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.pagination-btn {
+  background-color: var(--card-bg-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-@keyframes App-logo-spin {
+.pagination-btn:hover {
+  background-color: var(--card-hover-color);
+}
+body {
+  background-color: #121212;
+  font-family: 'Roboto', sans-serif;
+  color: #f1f1f1;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.movie-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 200px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.movie-card-details {
+  padding: 1rem;
+  text-align: center;
+}
+
+.movie-details {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  text-align: center;
+}
+
+.trailer-button {
+  background-color: #ff4500;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.trailer-button:hover {
+  background-color: #ff6347;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #333;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #444;
+}
+body {
+  background-color: #121212;
+  font-family: 'Roboto', sans-serif;
+  color: #f1f1f1;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  animation: slideIn 1s ease-out;
+}
+
+.movie-card {
+  position: relative;
+  background-color: #2c2c2c;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 230px;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.movie-card-details {
+  padding: 1rem;
+  text-align: center;
+}
+
+.movie-details {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  text-align: center;
+}
+
+.trailer-button {
+  background-color: #ff4500;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.trailer-button:hover {
+  background-color: #ff6347;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #333;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+/* Sliding animation */
+@keyframes slideIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(50px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
